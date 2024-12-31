@@ -4,5 +4,5 @@ The project includes practical assignments for the VGGI credit module (https://v
 
 It is based on the project in the ademch/WebGL repository (https://github.com/ademch/WebGL).
 
-# PA3 (Control task - texturing) 
-![plot](./images/corrugated_sphere_u90_v90.png)
+# Calculation and graphics work - operations on texture coordinates 
+![plot](./images/corrugated_sphere_u20_v90.png)
