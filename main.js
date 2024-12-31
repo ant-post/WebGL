@@ -249,19 +249,19 @@ function init() {
     // Sync sliders with input fields
     vSlider.oninput = function () {
         vValue.value = vSlider.value;
-        paramV = parseFloat(vSlider.value);
+        rebuildSurface();
     };
     vValue.oninput = function () {
         vSlider.value = vValue.value;
-        paramV = parseFloat(vValue.value);
+        rebuildSurface();
     };
     uSlider.oninput = function () {
         uValue.value = uSlider.value;
-        paramU = parseFloat(uSlider.value);
+        rebuildSurface();
     };
     uValue.oninput = function () {
         uSlider.value = uValue.value;
-        paramU = parseFloat(uValue.value);
+        rebuildSurface();
     };
     scaleSlider.oninput = function () {
         scaleValue.value = scaleSlider.value;
@@ -271,6 +271,18 @@ function init() {
         scaleSlider.value = scaleValue.value;
         textureScale = parseFloat(scaleValue.value);
     };
+
+    function rebuildSurface() {
+        let data = {};
+        CreateSurfaceData(data);
+        surface.BufferData(
+            data.positions,
+            data.normals,
+            data.tangents,
+            data.texcoords,
+            data.indices
+        );
+    }
 
     // Keyboard event handler to move the sphere without affecting the light
     document.addEventListener("keydown", (event) => {
